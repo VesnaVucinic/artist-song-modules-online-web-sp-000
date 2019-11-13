@@ -1,6 +1,9 @@
 require 'pry'
 
 class Artist
+  extend Memorable::ClassMethods
+  #include Memorable::InstanceMethods
+  
   attr_accessor :name
   attr_reader :songs
 
@@ -19,18 +22,21 @@ class Artist
     @@artists
   end
 
+=begin
   def self.reset_all
     self.all.clear
   end
-
+  
   def self.count
     self.all.count
   end
+=end
 
   def add_song(song)
     @songs << song
     song.artist = self
   end
+
 
   def add_songs(songs)
     songs.each { |song| add_song(song) }
@@ -38,5 +44,6 @@ class Artist
 
   def to_param
     name.downcase.gsub(' ', '-')
+    #It finds all instances of the matched string and replaces it with the new argument. The method takes two arguments. The first is the text you want to replace and the second is the new text.
   end
 end
