@@ -11,10 +11,6 @@ require 'pry'
 
   @@songs = []
 
-  def initialize
-    @@songs << self
-  end
-
   def self.all
     @@songs
   end
