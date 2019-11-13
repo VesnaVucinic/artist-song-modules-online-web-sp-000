@@ -1,6 +1,6 @@
 require 'pry'
 
-class Song
+0class Song
   extend Memorable::ClassMethods
   #include Memorable::InstanceMethods
   
